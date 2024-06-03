@@ -1,7 +1,7 @@
 import { getErrorMessage } from './getErrorMessage.js'
 
 const apiKey = '?apikey=VnifBChoxR7eXY9uZayjHkHkEkLtejjt'
-const baseURL = 'http://dataservice.accuweather.com/'
+const baseURL = 'https://dataservice.accuweather.com/'
 
 const getCityURL = cityName =>
   `${baseURL}locations/v1/cities/search${apiKey}&q=${cityName}`
