@@ -1,6 +1,6 @@
 import { getCityWeatherInfo } from './getCityWeatherInfo.js'
 
-export const renderCityWeather = async (inputValue) => {
+export const renderCityWeather = async inputValue => {
   const timeImg = document.querySelector('[data-js="time"]')
   const timeIconContainer = document.querySelector('[data-js="time-icon"]')
   const cityNameContainer = document.querySelector('[data-js="city-name"]')
