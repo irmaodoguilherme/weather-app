@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/style.css">
   <title>Weather Application</title>
@@ -15,21 +16,21 @@
     <form data-js="change-location">
       <label for="city" class="mb-1">Insira o nome de uma cidade</label>
 
-      <div class="messageBox mx-auto mb-5">
+      <div class="messageBox m-inline mb-5">
         <input class="messageInput" name="city" placeholder="Ex: Miami" type="text" />
       </div>
     </form>
 
-    <div data-js="city-weather-container" class="mx-auto bg-white rounded-lg flex w-fit hidden">
+    <div data-js="city-weather-container" class="bg-white rounded-lg flex flex-row items-start maxw-52r minw-41r m-inline hidden city-weather-container">
       <img data-js="time" src="https://via.placeholder.com/400x300" class="rounded-l-lg">
 
-      <div data-js="time-icon" class="time-icon rounded-full bg-slate-200 h-20 w-20"></div>
+      <div data-js="time-icon" class="time-icon rounded-full bg-slate-200"></div>
 
-      <div class="text-center text-black city-weather mt-8 flex flex-col items-center gap-y-2">
+      <div class="text-center text-black city-weather mt-8 flex flex-col items-center gap-y-2 m-inline">
         <h5 data-js="city-name" class="w-fit ls-04 fs-15 box-shadow">Nome da Cidade</h5>
 
         <div data-js="city-weather" class="w-fit ls-04 fs-15 text-wrap box-shadow">Clima</div>
-        
+
         <div>
           <span class="box-shadow w-fit fs-15 ls-04" data-js="city-temperature">00</span>
           <span class="fs-15 ls-04">°C</span>
