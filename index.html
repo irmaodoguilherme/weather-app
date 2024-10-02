@@ -4,40 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./css/style.css">
   <title>Weather Application</title>
 </head>
 
-<body class="bg-slate-950 text-white">
+<body class="bg-slate-950 text-white bg-darkblue font-sysui">
   <div class="text-center">
-    <h1 class="text-4xl my-6">Informações do Clima</h1>
+
+    <h1 class="text-4xl my-6 text-break">Informações do Clima</h1>
 
     <form data-js="change-location">
-      <label for="city" class="mb-1">Insira o nome de uma cidade</label>
+      <label for="city" class="mb-1 text-break">Insira o nome de uma cidade</label>
 
-      <div class="messageBox m-inline mb-5">
-        <input class="messageInput" name="city" placeholder="Ex: Miami" type="text" />
+      <div class="grid place-items-center bg-gray max-w-fit p-2 px-4 mx-auto mb-5">
+        <input class="bg-transparent w-full" name="city" placeholder="Ex: Miami" type="text" />
       </div>
     </form>
 
-    <div data-js="city-weather-container" class="bg-white rounded-lg flex flex-row items-start maxw-52r minw-41r m-inline hidden city-weather-container">
-      <img data-js="time" src="https://via.placeholder.com/400x300" class="rounded-l-lg">
+    <div data-js="city-weather-container"
+      class="flex justify-center hidden mx-auto max-w-fit font-dosis city-weather-container">
+      <img data-js="time" src="https://via.placeholder.com/400x300" class="rounded-l-side time">
 
-      <div data-js="time-icon" class="time-icon rounded-full bg-slate-200"></div>
+      <div data-js="time-icon" class="relative"></div>
 
-      <div class="text-center text-black city-weather mt-8 flex flex-col items-center gap-y-2 m-inline">
-        <h5 data-js="city-name" class="w-fit ls-04 fs-15 box-shadow">Nome da Cidade</h5>
+      <div
+        class="flex bg-white text-black flex-col items-center gap-8 px-8 p-l rounded-r-side justify-center text-break city-details">
+        <h5 data-js="city-name" class="w-fit ls-04 text-2xl under-line">Nome da Cidade</h5>
 
-        <div data-js="city-weather" class="w-fit ls-04 fs-15 text-wrap box-shadow">Clima</div>
+        <div data-js="city-weather" class="w-fit ls-04 text-2xl text-wrap under-line">Clima</div>
 
         <div>
-          <span class="box-shadow w-fit fs-15 ls-04" data-js="city-temperature">00</span>
-          <span class="fs-15 ls-04">°C</span>
+          <span class="under-line w-fit text-2xl ls-04" data-js="city-temperature">00</span>
+          <span class="text-2xl ls-04">°C</span>
         </div>
       </div>
     </div>
   </div>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"
+    integrity="sha512-jB0TkTBeQC9ZSkBqDhdmfTv1qdfbWpGE72yJ/01Srq6hEzZIz2xkz1e57p9ai7IeHMwEG7HpzG6NdptChif5Pg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="module" src="./js/app.js"></script>
 </body>
 
