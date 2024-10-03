@@ -11,7 +11,7 @@ Um aplicativo que fornece informações atualizadas sobre as condições climát
 
 <h2 id="como-acessar">Como acessar</h2>
 
-Você pode acessá-lo [aqui](weather-app-gal.netlify.app/) ou através do link na seção 'About'.
+Você pode acessá-lo [aqui](https://weather-app-gal.netlify.app/) ou através do link na seção 'About'.
 
 
 <h2 id="como-usá-la">Como usá-la</h2>
