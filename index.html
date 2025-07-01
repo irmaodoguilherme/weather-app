@@ -1,50 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en-US" class="h-100">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Weather Application</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Check the weather for any city with live temperature and weather conditions.">
+        <meta name="theme-color" content="#000">
+        <link rel="shortcut icon" href="./src/assets/favicon.svg" type="image/x-icon">
+        <link rel="stylesheet" href="./src/css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+        <title>Weather-app</title>
+    </head>
 
-<body class="bg-slate-950 text-white bg-darkblue font-sysui">
-  <div class="text-center">
-
-    <h1 class="text-4xl my-6 text-break">Informações do Clima</h1>
-
-    <form data-js="change-location">
-      <label for="city" class="mb-1 text-break">Insira o nome de uma cidade</label>
-
-      <div class="grid place-items-center bg-gray max-w-fit p-2 px-4 mx-auto mb-5">
-        <input class="bg-transparent w-full" name="city" placeholder="Ex: Miami" type="text" />
-      </div>
-    </form>
-
-    <div data-js="city-weather-container"
-      class="flex justify-center hidden mx-auto max-w-fit font-dosis city-weather-container">
-      <img data-js="time" src="https://via.placeholder.com/400x300" class="rounded-l-side time">
-
-      <div data-js="time-icon" class="relative"></div>
-
-      <div
-        class="flex bg-white text-black flex-col items-center gap-8 px-8 p-l rounded-r-side justify-center text-break city-details">
-        <h5 data-js="city-name" class="w-fit ls-04 text-2xl under-line">Nome da Cidade</h5>
-
-        <div data-js="city-weather" class="w-fit ls-04 text-2xl text-wrap under-line">Clima</div>
-
-        <div>
-          <span class="under-line w-fit text-2xl ls-04" data-js="city-temperature">00</span>
-          <span class="text-2xl ls-04">°C</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"
-    integrity="sha512-jB0TkTBeQC9ZSkBqDhdmfTv1qdfbWpGE72yJ/01Srq6hEzZIz2xkz1e57p9ai7IeHMwEG7HpzG6NdptChif5Pg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script type="module" src="./js/app.js"></script>
-</body>
+    <body class="c-bg-black d-grid place-content-center">
+        <main class="d-flex flex-column gap-4">
+            <h1 class="visually-hidden">Weather-app</h1>
+            <div class="alert alert-danger position-absolute px-4 inset-0 my-auto mx-auto w-fit h-fit d-flex align-items-center gap-3" role="alert" data-alert="error-message">
+                <p class="m-0 p-0 text-center fs-5 text-break">Cidade não encontrada</p>
+                <button type="button" class="btn-close" data-button="close-alert" aria-label="Close alert"></button>
+            </div>
+            <section aria-label="Fetch city weather details">
+                <form data-form="fetch-city-weather" class="text-center">
+                    <input name="city" type="text" placeholder="Ex.: Viamão" autofocus class="text-center bg-transparent fs-3 text-white roundness-basic border-1 border-white w-100 max-w-21rem">
+                    <button type="submit" class="d-none">Search city</button>
+                </form>
+            </section>
+            <section class="d-flex vertical-weather-details">
+                <h2 class="visually-hidden">City weather details</h2>
+                <div class="position-relative z-1">
+                    <img class="d-none vertical-img horizontal-img w-100" src="./src/weather/day.svg" alt="Day illustration" data-img="day">
+                    <img class="d-none vertical-img horizontal-img w-100" src="./src/weather/night.svg" alt="Night illustration" data-img="night">
+                    <img class="d-none position-absolute bg-white weather-icon" src="" alt="Current weather condition" data-img="current-weather">
+                </div>
+                <div class="d-none bg-white d-flex flex-column justify-content-center align-items-center text-center weather-section horizontal-details vertical-details gap-3" data-section="weather-details">
+                    <span class="d-none px-5 fs-1 overflow-auto max-w-25rem whitespace-nowrap" aria-label="City name" data-span="city-name">undefined</span>
+                    <button class="px-5 d-none btn-switch btn btn-outline-dark fs-2 overflow-auto max-w-25rem whitespace-nowrap" aria-label="Current portuguese weather" data-button="weather">Portuguese weather</button>
+                    <button class="px-5 d-none btn-switch btn btn-outline-dark fs-2 overflow-auto max-w-25rem whitespace-nowrap hidden" disabled aria-hidden="true" aria-label="Current english weather" data-button="weather">English weather</button>
+                    <button class="d-none btn-switch btn btn-outline-dark roundness-basic fs-3 overflow-auto max-w-25rem whitespace-nowrap" aria-label="Current celsius temperature" data-button="temp">0 ºC</button>
+                    <button class="d-none btn-switch btn btn-outline-dark roundness-basic fs-3 overflow-auto max-w-25rem whitespace-nowrap hidden" disabled aria-hidden="true" aria-label="Current fahrenheit temperature" data-button="temp">0 ºF</button>
+                </div>
+            </section>
+        </main>
+        <footer class="text-break fs-5 text-white text-center mt-3 px-2">
+            <p>© 2025 Guilherme Aires. Licensed under the MIT license.</p>
+        </footer>
+        <script type="module" src="./src/app.js"></script>
+    </body>
 
 </html>

@@ -1,1 +1,0 @@
-export const sanitize = value => DOMPurify.sanitize(value)
